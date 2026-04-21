@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f5f7fb;
-  --foreground: #111827;
+  --background: #05070f;
+  --foreground: #f8fafc;
 }
 
 html,
@@ -15,7 +15,7 @@ body {
   margin: 0;
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Trebuchet MS", "Century Gothic", "Segoe UI", sans-serif;
 }
 
 * {
