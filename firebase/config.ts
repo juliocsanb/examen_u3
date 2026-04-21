@@ -1,8 +1,10 @@
+// firebase/config.ts
+
 export const firebaseConfig = {
-  apiKey: "REPLACE_ME",
-  authDomain: "REPLACE_ME",
-  projectId: "REPLACE_ME",
-  storageBucket: "REPLACE_ME",
-  messagingSenderId: "REPLACE_ME",
-  appId: "REPLACE_ME",
+  apiKey: "AIzaSyA8IY_Wbh33pdqaaY2kKO54CGifi-fEdPs",
+  authDomain: "web-218500.firebaseapp.com",
+  projectId: "web-218500",
+  messagingSenderId: "539802319607",       
+  appId: "1:539802319607:web:dc04682efd3ffa857531f2",
 };
+
