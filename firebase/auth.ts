@@ -18,10 +18,11 @@ export async function autenticarUsuario(
   correo: string,
   contrasena: string,
 ): Promise<UserCredential> {
-  // TODO: implementar inicio de sesión con Firebase Authentication.
-  throw new Error("Pendiente de implementar");
+  return await signInWithEmailAndPassword(auth, correo, contrasena);
 }
 
+
 export async function cerrarSesionUsuario(): Promise<void> {
+   await signOut(auth);
   // TODO: implementar cierre de sesión.
 }
