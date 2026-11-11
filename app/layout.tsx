@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
+import { Geist, Geist_Mono } from "next/font/google";
+
 export const metadata: Metadata = {
   title: "Examen práctico",
   description: "Login con Firebase",
