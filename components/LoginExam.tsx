@@ -6,6 +6,7 @@ import {
   cerrarSesionUsuario,
   configurarPersistencia,
 } from "@/firebase/auth";
+import { signInWithEmailAndPassword } from "firebase/auth";
 
 type AuthUser = {
   email: string;
@@ -30,15 +31,40 @@ export default function LoginExam() {
   async function procesarAcceso(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
-    // TODO: limpiar errores previos.
-    // TODO: validar campos vacíos.
-    // TODO: validar formato de correo.
-    // TODO: activar estado de carga.
-    // TODO: configurar persistencia según recordarme.
-    // TODO: autenticar usuario.
-    // TODO: guardar usuario autenticado en estado.
-    // TODO: limpiar estado de carga.
-    // TODO: manejar errores y mostrarlos en pantalla.
+    if (cargando) return;
+    setError("");
+
+    const email = correo.trim();
+
+    if (!email || !contrasena) {
+      setError("Ingresa tu correo y contraseña.");
+      return;
+    }
+
+    if (!esCorreoValido(email)) {
+      setError("Ingresa un correo electrónico válido.");
+      return;
+    }
+
+    setCargando(true);
+
+    try {
+      const { firebaseAuth } = await import("@/src/lib/firebaseConfig");
+      const { signInWithEmailAndPassword } = await import("firebase/auth");
+
+      const resultado = await signInWithEmailAndPassword(
+        firebaseAuth,
+        email,
+        contrasena,
+      );
+
+      setUsuario({ email: resultado.user.email ?? email });
+      setContrasena("");
+    } catch {
+      setError("No se pudo iniciar sesión. Revisa tus credenciales.");
+    } finally {
+      setCargando(false);
+    }
   }
 
   async function salir() {
