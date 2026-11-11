@@ -18,6 +18,23 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.material-symbols-outlined {
+  font-family: "Material Symbols Outlined";
+  font-variation-settings:
+    "FILL" 0,
+    "wght" 400,
+    "GRAD" 0,
+    "opsz" 24;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1;
+  font-weight: normal;
+  font-style: normal;
+  white-space: nowrap;
+  -webkit-font-feature-settings: "liga";
+  -webkit-font-smoothing: antialiased;
+}
+
 * {
   box-sizing: border-box;
 }
