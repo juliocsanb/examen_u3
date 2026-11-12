@@ -19,7 +19,7 @@ export async function autenticarUsuario(
   contrasena: string,
 ): Promise<UserCredential> {
   // TODO: implementar inicio de sesión con Firebase Authentication.
-  throw new Error("Pendiente de implementar");
+   return signInWithEmailAndPassword(auth, correo, contrasena);
 }
 
 export async function cerrarSesionUsuario(): Promise<void> {
