@@ -1,7 +1,5 @@
-import { getApp, getApps, initializeApp } from "firebase/app";
-import { getAuth } from "firebase/auth";
+// firebase/client.ts
+import { initializeApp, getApps, getApp } from "firebase/app";
 import { firebaseConfig } from "./config";
 
-const app = getApps().length ? getApp() : initializeApp(firebaseConfig);
-
-export const auth = getAuth(app);
+export const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();

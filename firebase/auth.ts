@@ -1,27 +1,9 @@
-import {
-  browserLocalPersistence,
-  browserSessionPersistence,
-  setPersistence,
-  signInWithEmailAndPassword,
-  signOut,
-  type UserCredential,
-} from "firebase/auth";
-import { auth } from "./client";
+// firebase/auth.ts
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { app } from "./client";
 
-export async function configurarPersistencia(recordarme: boolean): Promise<void> {
-  // TODO: implementar persistencia según el valor de recordarme.
-  // Si recordarme es true, usar browserLocalPersistence.
-  // Si recordarme es false, usar browserSessionPersistence.
-}
+export const auth = getAuth(app);
 
-export async function autenticarUsuario(
-  correo: string,
-  contrasena: string,
-): Promise<UserCredential> {
-  // TODO: implementar inicio de sesión con Firebase Authentication.
-  throw new Error("Pendiente de implementar");
-}
-
-export async function cerrarSesionUsuario(): Promise<void> {
-  // TODO: implementar cierre de sesión.
-}
+export const loginWithEmail = (email: string, password: string) => {
+  return signInWithEmailAndPassword(auth, email, password);
+};
