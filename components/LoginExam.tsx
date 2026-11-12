@@ -67,14 +67,12 @@ export default function LoginExam() {
     <main className="flex min-h-screen items-center justify-center bg-gradient-to-br from-blue-50 via-blue-100/50 to-indigo-100 px-4 py-12 sm:px-6 lg:px-8">
       <section className="w-full max-w-md bg-white/90 backdrop-blur-md rounded-2xl shadow-xl shadow-blue-900/10 border border-blue-100 p-8 sm:p-10">
         
-        {/* Cabecera */}
         <div className="mb-8 text-center">
           <h1 className="text-3xl font-extrabold tracking-tight text-blue-950 mb-2">Acceso escolar</h1>
         </div>
 
         {!usuario ? ( 
           <form onSubmit={procesarAcceso} className="space-y-5">
-            {/* Input Correo */}
             <div>
               <label htmlFor="correo" className="block text-sm font-semibold text-blue-900 mb-1.5">
                 Correo electrónico
@@ -89,7 +87,6 @@ export default function LoginExam() {
               />
             </div>
 
-            {/* Input Contraseña */}
             <div>
               <label htmlFor="contrasena" className="block text-sm font-semibold text-blue-900 mb-1.5">
                 Contraseña
@@ -104,7 +101,6 @@ export default function LoginExam() {
               />
             </div>
 
-            {/* Checkbox Recordarme */}
             <div className="flex items-center">
               <label className="flex items-center gap-2 cursor-pointer group">
                 <input
@@ -119,7 +115,6 @@ export default function LoginExam() {
               </label>
             </div>
 
-            {/* Mensaje de Error */}
             {error ? (
               <div className="rounded-xl bg-red-50 p-3 text-sm text-red-600 border border-red-100 flex items-center gap-2 shadow-sm">
                 <svg className="h-5 w-5 shrink-0" fill="currentColor" viewBox="0 0 20 20">
@@ -129,7 +124,6 @@ export default function LoginExam() {
               </div>
             ) : null}
 
-            {/* Botón de Envío */}
             <button 
               type="submit" 
               disabled={cargando} 
@@ -146,7 +140,6 @@ export default function LoginExam() {
           </form>
         ) : (
           
-          /* Estado de Éxito */
           <div className="text-center py-6 animate-in fade-in zoom-in duration-300">
             <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-blue-100 mb-5 shadow-inner">
                <svg className="h-8 w-8 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
